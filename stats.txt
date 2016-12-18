@@ -1,0 +1,7 @@
+Avg battles was: 312
+Avg wars was: 11
+Avg double wars was: 0.475
+MAX number of battles was: 1234
+MIN number of battles was: 18
+MAX number of wars was: 57
+
