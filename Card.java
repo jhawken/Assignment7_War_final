@@ -3,7 +3,7 @@ public class Card
 	private int suit;
 	private int number;
 
-	public static final int SPADES = 0;
+	public static final int SPADES = 0; // suit only used as tie-breaker as an option
 	public static final int CLUBS = 1;
 	public static final int DIAMONDS = 2;
 	public static final int HEARTS = 3;
@@ -11,7 +11,7 @@ public class Card
 
 	public void setSuit(int newSuit)
 	{
-		if((newSuit>= 0)&&(newSuit<= 3))
+		if((newSuit>= 0)&&(newSuit<= 3))	// for creating deck
 		{
 			this.suit = newSuit;
 		}
@@ -20,25 +20,25 @@ public class Card
 	
 	public int getSuit()
 	{
-		return this.suit;
+		return this.suit;	//	accessing player decks or current battle pile...as an option
 	}
 
 	
 	public void setNumber(int newNumber)
 	{
-		this.number = newNumber;
+		this.number = newNumber;	// for creating deck
 	}
 
 	
 	public int getNumber()
 	{
-		return this.number;
+		return this.number;		//	accessing player decks or current battle pile
 	}
 
 	
 	public void setSuitFromString(String suit)
 	{
-		if(suit.equals("SPADES"))
+		if(suit.equals("SPADES"))	// create deck with this assignment
 		{
 			this.suit=Card.SPADES;
 		}
@@ -62,7 +62,7 @@ public class Card
 	
 	public String getSuitAsString()
 	{
-		if(this.suit==Card.SPADES)
+		if(this.suit==Card.SPADES)	// access deck suits
 		{
 			return "SPADES";
 		}

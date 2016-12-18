@@ -51,7 +51,7 @@ public class War
 	
 	public static int getMin(int [] numbers)
 	{
-		int min=1000; //	min of array
+		int min=1000; //	verified with filewriter that zero WARs does happen quite often.
 		for(int num:numbers)
 		{
 			if(min>num)
@@ -105,12 +105,18 @@ public class War
 		try
 		{
 			// line seperator for windows OS is \r\n  .....grrr  ********* //	write to stats.txt output file
+			fw.write("For 1000 games: \r\n");
 			fw.write("Avg battles was: "+getAverage(avgBattles)+"\r\n");
 			fw.write("Avg wars was: "+getAverage(avgWars)+"\r\n");
 			fw.write("Avg double wars was: "+getAverage(avgDoubleWars)+"\r\n");
 			fw.write("MAX number of battles was: "+getMax(avgBattles)+"\r\n");
 			fw.write("MIN number of battles was: "+getMin(avgBattles)+"\r\n");
-			fw.write("MAX number of wars was: "+getMax(avgWars)+"\r\n"+"\r\n");
+			fw.write("MAX number of wars was: "+getMax(avgWars)+"\r\n");
+			fw.write("MIN number of wars was: "+getMin(avgWars)+"\r\n"+"\r\n");
+			/*for(int a:avgWars)
+			{
+				fw.write("WAR in each round was: "+avgWars[a]+"\r\n");	// Yup, MIN is zero most of time according to printout.
+			}*/
 			fw.close();
 		}
 		catch (FileNotFoundException e)
@@ -129,6 +135,7 @@ public class War
 		System.out.println("MAX number of battles was: "+getMax(avgBattles));
 		System.out.println("MIN number of battles was: "+getMin(avgBattles));
 		System.out.println("MAX number of wars was: "+getMax(avgWars));
+		System.out.println("MIN number of wars was: "+getMin(avgWars));
 	}
 
 
@@ -136,7 +143,7 @@ public class War
 	{
 		Card[] entireDeck=new Card[numberCards];	//	fill Cards array with numbers and suits
 		int z=0;
-		for(int i=0;i<13; i++)
+		for(int i=0;i<13; i++) //	n+1 is number on cards with face cards being above 10, ie Jack, Queen, King, and ACE is high
 		{
 			for(int j=0;j<4;j++)
 			{
